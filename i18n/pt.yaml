@@ -1,0 +1,97 @@
+# Tradução em Português (PT-BR)
+
+# Navegação
+nav_home:
+  other: Início
+
+nav_posts:
+  other: Artigos
+
+nav_about:
+  other: Sobre
+
+# Footer
+footer_tagline:
+  other: Todos os direitos reservados.
+
+footer_privacy:
+  other: Privacidade
+
+footer_terms:
+  other: Termos
+
+# Posts
+posts_title:
+  other: Artigos
+
+posts_description:
+  other: Exploração de ideias, arquitetura, código e boas práticas em desenvolvimento de software.
+
+posts_empty:
+  other: Nenhum artigo disponível no momento.
+
+# Nomes dos meses
+month_1:
+  other: janeiro
+
+month_2:
+  other: fevereiro
+
+month_3:
+  other: março
+
+month_4:
+  other: abril
+
+month_5:
+  other: maio
+
+month_6:
+  other: junho
+
+month_7:
+  other: julho
+
+month_8:
+  other: agosto
+
+month_9:
+  other: setembro
+
+month_10:
+  other: outubro
+
+month_11:
+  other: novembro
+
+month_12:
+  other: dezembro
+
+# Formato de data
+date_format:
+  other: "{{ .day }} de {{ .month }} de {{ .year }}"
+
+# Post single
+author_label:
+  other: Autor
+
+topics_label:
+  other: Tópicos
+
+reading_time:
+  other: "{{ .minutes }} min de leitura"
+
+share_article:
+  other: Compartilhar este artigo
+
+share_tagline:
+  other: Espalhe o espírito arquitetônico intelectual.
+
+related_reading:
+  other: Leitura Relacionada
+
+previous_article:
+  other: "← Anterior"
+
+next_article:
+  other: "Próximo →"

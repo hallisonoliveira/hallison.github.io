@@ -1,0 +1,11 @@
+{{- /* Accessible language selector button */ -}}
+<button
+  id="language-toggle"
+  type="button"
+  class="material-symbols-outlined text-on-surface dark:text-on-surface-variant cursor-pointer hover:opacity-70 transition-opacity"
+  title="{{ if eq .Site.Language.Lang "en" }}Português{{ else }}English{{ end }}"
+  aria-label="{{ if eq .Site.Language.Lang "en" }}Mudar para português{{ else }}Switch to English{{ end }}"
+  data-current-lang="{{ .Site.Language.Lang }}"
+>
+  language
+</button>
