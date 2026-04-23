@@ -1,0 +1,36 @@
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-stone-900/5 transition-colors duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+
+    <a href="{{ relLangURL "/" }}" class="text-2xl font-black tracking-tighter text-primary-container dark:text-primary-fixed hover:opacity-80 font-headline cursor-pointer active:scale-95 transition-all duration-300">
+      {{ .Site.Params.siteName }}
+    </a>
+
+    <div class="hidden md:flex flex-1 justify-center items-center gap-8">
+      {{- $current := .RelPermalink -}}
+      {{- $baseClass := "font-headline font-bold tracking-tight text-on-surface dark:text-on-surface-variant hover:opacity-100 transition-opacity duration-300" -}}
+      {{- $activeClass := " text-primary-container dark:text-primary-fixed border-b-2 border-primary-container pb-1" -}}
+      {{- $inactiveClass := " opacity-70" -}}
+
+      <a href="{{ relLangURL "/" }}"
+         class="{{ $baseClass }}{{ if eq $current (relLangURL "/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+         {{ if eq $current (relLangURL "/") }}aria-current="page"{{ end }}>
+        {{ i18n "nav_home" }}
+      </a>
+      <a href="{{ relLangURL "/posts/" }}"
+         class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/posts/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+         {{ if strings.HasPrefix $current (relLangURL "/posts/") }}aria-current="page"{{ end }}>
+        {{ i18n "nav_posts" }}
+      </a>
+      <a href="{{ relLangURL "/about/" }}"
+         class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/about/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+         {{ if strings.HasPrefix $current (relLangURL "/about/") }}aria-current="page"{{ end }}>
+        {{ i18n "nav_about" }}
+      </a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      {{ partial "language-selector.html" . }}
+    </div>
+
+  </div>
+</nav>

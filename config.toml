@@ -1,0 +1,103 @@
+baseURL = 'http://example.org/'
+languageCode = 'pt-br'
+title = 'Hallison Oliveira'
+theme = ''
+defaultContentLanguage = 'pt'
+defaultContentLanguageInSubdir = false
+enableMissingTranslationPlaceholders = true
+
+[languages]
+  [languages.pt]
+    languageCode = 'pt-br'
+    languageName = 'Português'
+    weight = 1
+    title = 'Hallison Oliveira'
+
+  [languages.en]
+    languageCode = 'en-us'
+    languageName = 'English'
+    weight = 2
+    title = 'Hallison Oliveira'
+
+[outputs]
+  home = ['HTML', 'JSON']
+
+[params]
+  siteName = 'Hallison Oliveira'
+  author = 'Hallison'
+  email = 'hallisoncwb@gmail.com'
+
+  [[params.socialLinks]]
+    name = "Github"
+    url = "https://github.com"
+    icon = "terminal"
+  [[params.socialLinks]]
+    name = "LinkedIn"
+    url = "https://linkedin.com"
+    icon = "share"
+  [[params.socialLinks]]
+    name = "Newsletter"
+    url = "mailto:hallisoncwb@gmail.com"
+    icon = "mail"
+
+[params.pt]
+  siteSubtitle = 'Tecnologia, Audio e afins'
+  siteDescription = 'Sobre ideias, áudio, códigos, arquiteturas e boas práticas em desenvolvimento de software e infraestrutura.'
+
+  aboutHero = 'O <span class="italic font-body font-light">Arquiteto</span> de<br/>Sistemas Digitais.'
+  aboutLocation = 'Est. 2014 — Baseado em Berlin'
+  aboutPhilosophyTitle = 'Filosofia'
+  aboutQuote = 'Código não é apenas um conjunto de instruções para uma máquina; é um meio para expressão humana e um framework para pensamento arquitetônico.'
+
+  aboutToolkitTitle = 'O Toolkit'
+  aboutToolkitSubtitle = 'Tecnologias e Interesses Selecionados'
+
+  stack1Label = 'Core Systems'
+  stack1Title = 'Rust & Performance'
+  stack1Description = 'Criando sistemas memory-safe com alta concorrência, focando em previsibilidade e manutenibilidade de longo prazo.'
+  stack1Tags = ["Tokio", "WASM"]
+
+  stack2Label = 'Interface Craft'
+  stack2Title = 'TypeScript & React'
+  stack2Description = 'Construindo aplicações web sofisticadas que equilibram gestão complexa de estado com experiências de usuário elegantes.'
+  stack2Tags = ["Next.js", "Tailwind"]
+
+  stack3Label = 'Interests'
+  stack3Title = 'Digital Minimalism'
+  stack3Description = 'Defendendo software que respeita a atenção humana e se concentra no essencial em vez do excessivo.'
+  stack3Tags = ["Typography", "Privacy"]
+
+  aboutCTATitle = 'Vamos construir<br/>algo <span class="text-primary-container underline decoration-outline-variant underline-offset-8">substancial</span>.'
+  aboutCTASubtitle = 'Atualmente aberto a colaborações em projetos open-source ou consulting arquitetônico.'
+  aboutCTAButton = 'Entrar em contato'
+
+[params.en]
+  siteSubtitle = 'Technology, Audio and related'
+  siteDescription = 'About ideas, audio, code, architecture and best practices in software development and infrastructure.'
+
+  aboutHero = 'The <span class="italic font-body font-light">Architect</span> of<br/>Digital Systems.'
+  aboutLocation = 'Est. 2014 — Based in Berlin'
+  aboutPhilosophyTitle = 'Philosophy'
+  aboutQuote = 'Code is not just a set of instructions for a machine; it is a medium for human expression and a framework for architectural thought.'
+
+  aboutToolkitTitle = 'The Toolkit'
+  aboutToolkitSubtitle = 'Selected Technologies & Interests'
+
+  stack1Label = 'Core Systems'
+  stack1Title = 'Rust & Performance'
+  stack1Description = 'Crafting memory-safe, high-concurrency systems with a focus on predictability and long-term maintainability.'
+  stack1Tags = ["Tokio", "WASM"]
+
+  stack2Label = 'Interface Craft'
+  stack2Title = 'TypeScript & React'
+  stack2Description = 'Building sophisticated web applications that balance complex state management with elegant user experiences.'
+  stack2Tags = ["Next.js", "Tailwind"]
+
+  stack3Label = 'Interests'
+  stack3Title = 'Digital Minimalism'
+  stack3Description = 'Advocating for software that respects human attention and focuses on the essential rather than the excessive.'
+  stack3Tags = ["Typography", "Privacy"]
+
+  aboutCTATitle = 'Lets build<br/>something <span class="text-primary-container underline decoration-outline-variant underline-offset-8">substantial</span>.'
+  aboutCTASubtitle = 'Currently open to collaborations on open-source projects or architectural consulting.'
+  aboutCTAButton = 'Get in touch'

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="light" lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.siteDescription }}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed-variant": "#86221a",
+            "surface-container-high": "#e8e8e8",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#ffdad5",
+            "outline": "#8b716e",
+            "surface-container": "#eeeeee",
+            "on-primary-container": "#f47364",
+            "inverse-primary": "#ffb4aa",
+            "on-secondary-fixed-variant": "#4f4636",
+            "secondary-fixed": "#efe1cb",
+            "on-surface-variant": "#57423f",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dadada",
+            "secondary-fixed-dim": "#d2c5b0",
+            "inverse-on-surface": "#f1f1f1",
+            "surface-bright": "#f9f9f9",
+            "surface-container-low": "#f3f3f3",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "outline-variant": "#dec0bb",
+            "on-background": "#1a1c1c",
+            "surface": "#f9f9f9",
+            "on-tertiary-fixed-variant": "#474746",
+            "on-primary-fixed": "#410001",
+            "tertiary-fixed-dim": "#c8c6c5",
+            "primary-container": "#680a08",
+            "tertiary-container": "#323232",
+            "surface-tint": "#a6392f",
+            "tertiary-fixed": "#e5e2e1",
+            "primary-fixed-dim": "#ffb4aa",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#221b0d",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "background": "#f9f9f9",
+            "secondary": "#675d4c",
+            "primary": "#440001",
+            "surface-variant": "#e2e2e2",
+            "surface-container-highest": "#e2e2e2",
+            "on-secondary-container": "#6d6352",
+            "tertiary": "#1d1d1d",
+            "on-surface": "#1a1c1c",
+            "inverse-surface": "#2f3131",
+            "on-tertiary-container": "#9c9a99",
+            "secondary-container": "#efe1cb",
+            "on-tertiary-fixed": "#1c1b1b",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Newsreader"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-nav {
+      background: rgba(249, 249, 249, 0.8);
+      backdrop-filter: blur(24px);
+    }
+    .dark .glass-nav {
+      background: rgba(26, 28, 28, 0.8);
+    }
+    .oxblood-gradient {
+      background: linear-gradient(135deg, #680A08 0%, #440001 100%);
+    }
+    .text-shadow-subtle {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .prose p:first-of-type::first-letter {
+      @apply text-7xl font-headline font-black mr-3 float-left text-primary;
+    }
+    .prose-pre {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed font-body antialiased">
+  {{ partial "header.html" . }}
+
+  <main class="pt-24 lg:pt-32 px-6 md:px-12 lg:px-16">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  <script src="/js/navigation-mapper.js" defer></script>
+  <script src="/js/language-service.js" defer></script>
+</body>
+</html>
