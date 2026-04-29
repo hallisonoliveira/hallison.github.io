@@ -1,6 +1,6 @@
 {{ define "main" }}
   <!-- Hero Section: Intentional Asymmetry -->
-  <section class="max-w-7xl mx-auto mb-32">
+  <section class="max-w-screen-xl mx-auto mb-24">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
       <div class="md:col-span-9">
         <h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[0.9]">
@@ -16,17 +16,13 @@
             <div class="w-full h-full bg-gradient-to-br from-surface-variant to-surface-container"></div>
           {{ end }}
         </div>
-        <!-- Overlapping Decorative Element -->
-        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-fixed flex items-center justify-center rounded-none hidden md:flex">
-          <span class="text-primary-container font-headline font-bold text-4xl">01</span>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Philosophy Section: The Breathing Canvas -->
-  <section class="bg-secondary-fixed py-32 mb-32 -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16">
-    <div class="max-w-7xl mx-auto">
+  <section class="bg-secondary-fixed py-32 mb-24 -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16">
+    <div class="max-w-screen-xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
         <div class="md:col-span-4">
           <h2 class="font-headline font-extrabold text-2xl uppercase tracking-tight text-primary-container mb-6">{{ index .Site.Params .Site.Language "aboutPhilosophyTitle" }}</h2>
@@ -42,7 +38,7 @@
             <div class="flex flex-wrap gap-6 mt-8">
               {{ range .Site.Params.socialLinks }}
                 {{ if ne .name "Newsletter" }}
-                  <a class="flex items-center gap-2 font-label text-sm uppercase tracking-widest text-primary-container hover:opacity-80 transition-opacity"
+                  <a class="flex items-center gap-2 font-label text-sm uppercase tracking-widest text-primary-container hover:opacity-80 transition-opacity duration-300"
                      href="{{ .url }}"
                      target="_blank"
                      rel="noopener noreferrer">
