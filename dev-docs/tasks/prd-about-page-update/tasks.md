@@ -3,5 +3,5 @@
 ## Tarefas
 
 - [x] 1.0 Assets e Configuração
-- [ ] 2.0 Conteúdo Biográfico
-- [ ] 3.0 Layout e Contatos
+- [x] 2.0 Conteúdo Biográfico
+- [x] 3.0 Layout e Contatos
