@@ -29,11 +29,11 @@ enableMissingTranslationPlaceholders = true
 
   [[params.socialLinks]]
     name = "Github"
-    url = "https://github.com"
+    url = "https://github.com/hallisonoliveira"
     icon = "terminal"
   [[params.socialLinks]]
     name = "LinkedIn"
-    url = "https://linkedin.com"
+    url = "https://www.linkedin.com/in/hallisonoliveira/"
     icon = "share"
   [[params.socialLinks]]
     name = "Newsletter"
@@ -44,8 +44,8 @@ enableMissingTranslationPlaceholders = true
   siteSubtitle = 'Tecnologia, Audio e afins'
   siteDescription = 'Sobre ideias, áudio, códigos, arquiteturas e boas práticas em desenvolvimento de software e infraestrutura.'
 
-  aboutHero = 'O <span class="italic font-body font-light">Arquiteto</span> de<br/>Sistemas Digitais.'
-  aboutLocation = 'Est. 2014 — Baseado em Berlin'
+  aboutHero = 'Hallison Oliveira'
+  aboutLocation = 'Est. 2022 — Curitiba, Brasil'
   aboutPhilosophyTitle = 'Filosofia'
   aboutQuote = 'Código não é apenas um conjunto de instruções para uma máquina; é um meio para expressão humana e um framework para pensamento arquitetônico.'
 
@@ -75,8 +75,8 @@ enableMissingTranslationPlaceholders = true
   siteSubtitle = 'Technology, Audio and related'
   siteDescription = 'About ideas, audio, code, architecture and best practices in software development and infrastructure.'
 
-  aboutHero = 'The <span class="italic font-body font-light">Architect</span> of<br/>Digital Systems.'
-  aboutLocation = 'Est. 2014 — Based in Berlin'
+  aboutHero = 'Hallison Oliveira'
+  aboutLocation = 'Est. 2022 — Curitiba, Brazil'
   aboutPhilosophyTitle = 'Philosophy'
   aboutQuote = 'Code is not just a set of instructions for a machine; it is a medium for human expression and a framework for architectural thought.'
 
