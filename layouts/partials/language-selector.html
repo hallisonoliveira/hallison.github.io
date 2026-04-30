@@ -1,4 +1,22 @@
 {{- /* Accessible language selector button */ -}}
+{{- $targetLang := "en" -}}
+{{- if eq .Site.Language.Lang "en" -}}
+  {{- $targetLang = "pt" -}}
+{{- end -}}
+
+{{- $targetUrl := "" -}}
+{{- range .Translations -}}
+  {{- $targetUrl = .RelPermalink -}}
+{{- end -}}
+
+{{- if not $targetUrl -}}
+  {{- if eq $targetLang "en" -}}
+    {{- $targetUrl = "/en/" -}}
+  {{- else -}}
+    {{- $targetUrl = "/" -}}
+  {{- end -}}
+{{- end -}}
+
 <button
   id="language-toggle"
   type="button"
@@ -6,6 +24,7 @@
   title="{{ if eq .Site.Language.Lang "en" }}Português{{ else }}English{{ end }}"
   aria-label="{{ if eq .Site.Language.Lang "en" }}Mudar para português{{ else }}Switch to English{{ end }}"
   data-current-lang="{{ .Site.Language.Lang }}"
+  data-target-url="{{ $targetUrl }}"
 >
   language
 </button>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <title>{{ block "title" . }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
   <meta name="description" content="{{ .Site.Params.siteDescription }}">
 
   <!-- Fonts -->
@@ -14,7 +14,7 @@
   {{ partial "ga4-script.html" . }}
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography,forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -103,7 +103,68 @@
       text-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
     .prose p:first-of-type::first-letter {
-      @apply text-7xl font-headline font-black mr-3 float-left text-primary;
+      font-size: 4.5rem;
+      line-height: 0.85;
+      font-family: Manrope;
+      font-weight: 900;
+      margin-right: 0.75rem;
+      float: left;
+      color: #440001;
+    }
+    .prose p:first-of-type {
+      font-size: 1.5rem;
+      line-height: 1.625;
+    }
+    .prose blockquote {
+      position: relative;
+    }
+    .prose blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 8rem;
+      font-family: Manrope;
+      font-weight: 900;
+      color: rgba(68, 0, 1, 0.1);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .prose img {
+      margin-bottom: 0;
+    }
+    .prose figure {
+      margin-bottom: 0;
+    }
+    .prose figure img {
+      margin-bottom: 0;
+    }
+    .prose figcaption {
+      margin-top: 0;
+    }
+    .prose figure + p:empty {
+      display: none;
+    }
+    .prose figure + p:empty + p,
+    .prose figure + p:not(:empty) {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .prose code::before,
+    .prose code::after {
+      content: '';
+    }
+    .prose pre code {
+      background-color: transparent;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+    .prose pre {
+      tab-size: 4;
+      -moz-tab-size: 4;
     }
     .prose-pre {
       position: relative;

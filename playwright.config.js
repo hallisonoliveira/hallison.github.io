@@ -9,9 +9,9 @@ module.exports = defineConfig({
   reporter: 'list',
 
   webServer: {
-    command: 'hugo server --port 1313 --bind 0.0.0.0',
+    command: 'npm run hugo:server',
     url: 'http://localhost:1313',
-    reuseExistingServer: true,
+    reuseExistingServer: !process.env.CI,
     timeout: 30000,
   },
 

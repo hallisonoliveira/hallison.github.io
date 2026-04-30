@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dadada",
+                        "on-tertiary-container": "#9c9a99",
+                        "background": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#57423f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#440001",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#221b0d",
+                        "secondary": "#675d4c",
+                        "surface-container-low": "#f3f3f3",
+                        "on-background": "#1a1c1c",
+                        "on-secondary-container": "#6d6352",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "secondary-fixed-dim": "#d2c5b0",
+                        "inverse-primary": "#ffb4aa",
+                        "on-primary-fixed-variant": "#86221a",
+                        "outline-variant": "#dec0bb",
+                        "secondary-fixed": "#efe1cb",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#4f4636",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#323232",
+                        "tertiary": "#1d1d1d",
+                        "on-surface": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#efe1cb",
+                        "primary-fixed": "#ffdad5",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#410001",
+                        "surface-tint": "#a6392f",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#f47364",
+                        "outline": "#8b716e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#680a08"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Newsreader"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-subtle {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .code-syntax-comment { color: #d2c5b0; }
+        .code-syntax-keyword { color: #ffb4aa; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F9F9]/80 dark:bg-[#1A1C1C]/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#680A08] dark:text-[#FFB4AA] font-['Manrope'] cursor-pointer active:scale-95 transition-transform">
+                The Digital Atelier
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Manrope'] font-bold tracking-tight text-[#1A1C1C] dark:text-[#F9F9F9] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Essays</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#680A08] dark:text-[#FFB4AA] border-b-2 border-[#680A08] dark:border-[#FFB4AA] pb-1" href="#">Technical</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#1A1C1C] dark:text-[#F9F9F9] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Manuals</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#1A1C1C] dark:text-[#F9F9F9] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Archives</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#1A1C1C] dark:text-[#F9F9F9] cursor-pointer">search</button>
+<button class="bg-gradient-to-br from-primary-container to-primary text-on-primary px-6 py-2 rounded-lg font-['Manrope'] font-bold cursor-pointer active:scale-95 transition-all">
+                    Subscribe
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 lg:pt-32">
+<!-- Hero Header -->
+<article class="max-w-screen-xl mx-auto px-6 md:px-12">
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+<div class="max-w-3xl">
+<div class="flex items-center gap-4 mb-6">
+<span class="font-label text-xs tracking-widest text-primary font-bold bg-primary-fixed px-3 py-1 rounded-full uppercase">ENGINEERING</span>
+<span class="font-label text-xs text-on-surface-variant">OCTOBER 24, 2024</span>
+<span class="font-label text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5 min read
+                        </span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+                        The Architecture of Design Systems: <span class="text-primary italic">Beyond Tokens</span>
+</h1>
+</div>
+</header>
+<!-- Feature Image Section - Asymmetric Layout -->
+<div class="relative w-full aspect-[21/9] mb-24 overflow-hidden rounded-xl">
+<img alt="Architectural structure" class="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700" data-alt="Monochromatic architectural perspective of a brutalist concrete building with sharp shadows and geometric precision in daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZhRVmiZom4GLgAay3Mgv0og3jtaZejF3jTCSUajwB-Q8aIb9CKviVdhGt0Kepu-rGbOip_kAHuSWw4Aq-MItxC1f7B-KSj9T49diXyqMnryKU_BbhkRBvTpXHqQqdxwmf92FHGunjHMDeIRMFG_B-mqwjX658PrI9NRyklzkHEolu3qJOPYq_aCdaNPJCuvXhw21fTreFBsKFz0eyNAWP_oHGUJJbidYGn6Wkospxv_FsSXufEIWfe__KlaI4d_LjqBxRY_SBs2a"/>
+<div class="absolute inset-0 bg-surface-tint opacity-5 pointer-events-none"></div>
+</div>
+<!-- Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Metadata Sidebar -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-32 flex flex-col gap-12">
+<div>
+<h4 class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Author</h4>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+<div>
+<p class="font-headline font-bold text-sm">Adrian Thorne</p>
+<p class="font-label text-xs text-on-surface-variant">Principal Architect</p>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Topics</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-label">Systems</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-label">Scale</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-label">UI Logic</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Body Text -->
+<div class="lg:col-span-8 lg:col-start-5 space-y-12">
+<p class="font-body text-2xl leading-relaxed text-on-surface first-letter:text-7xl first-letter:font-headline first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-primary">
+                        Design systems are often mischaracterized as mere collections of UI components and design tokens. While these atomic elements form the foundation, the true architecture lies in the semantic relationships and the logic that binds them together. To build for longevity, we must look beyond the hexadecimal and into the structural integrity of our decision-making frameworks.
+                    </p>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight mt-16 mb-6">The Semantic Layer</h2>
+<p class="font-body text-xl leading-relaxed text-on-surface/90">
+                        When we move from primitive tokens (e.g., <code class="bg-surface-container-high px-1.5 py-0.5 rounded font-label text-base">red-500</code>) to semantic tokens (e.g., <code class="bg-surface-container-high px-1.5 py-0.5 rounded font-label text-base">action-critical</code>), we are introducing a layer of abstraction that allows the system to evolve without breaking its core intent. This is the "Brutalist" approach to software—where function dictates form, and the structure is exposed as a feature, not hidden behind aesthetic whims.
+                    </p>
+<!-- Technical Detail (Sans-serif) -->
+<div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-primary">
+<h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Implementation Note</h4>
+<p class="font-label text-sm text-on-surface-variant leading-relaxed">
+                            A robust design system uses a 3-tier token architecture: Global (Primitive), Alias (Semantic), and Component (Scoped). This ensures that a single brand change can ripple through the entire ecosystem without manual intervention at the pixel level.
+                        </p>
+</div>
+<!-- Code Block -->
+<div class="bg-tertiary-container p-8 rounded-xl overflow-hidden shadow-xl">
+<div class="flex justify-between items-center mb-6 opacity-40">
+<span class="font-label text-xs text-secondary-fixed-dim">styles/tokens.json</span>
+<span class="font-label text-xs text-secondary-fixed-dim uppercase tracking-widest">json</span>
+</div>
+<pre class="font-mono text-sm leading-relaxed overflow-x-auto"><span class="code-syntax-keyword">{</span>
+  <span class="text-white">"color"</span><span class="code-syntax-keyword">:</span> <span class="code-syntax-keyword">{</span>
+    <span class="text-white">"semantic"</span><span class="code-syntax-keyword">:</span> <span class="code-syntax-keyword">{</span>
+      <span class="text-white">"surface"</span><span class="code-syntax-keyword">:</span> <span class="code-syntax-keyword">{</span>
+        <span class="text-white">"primary"</span><span class="code-syntax-keyword">:</span> <span class="code-syntax-keyword">{</span> <span class="text-white">"value"</span><span class="code-syntax-keyword">:</span> <span class="text-[#FFB4AA]">"{color.primitive.neutral.900}"</span> <span class="code-syntax-keyword">}</span>,
+        <span class="text-white">"accent"</span><span class="code-syntax-keyword">:</span> <span class="code-syntax-keyword">{</span> <span class="text-white">"value"</span><span class="code-syntax-keyword">:</span> <span class="text-[#FFB4AA]">"{color.primitive.red.500}"</span> <span class="code-syntax-keyword">}</span>
+      <span class="code-syntax-keyword">}</span>
+    <span class="code-syntax-keyword">}</span>
+  <span class="code-syntax-keyword">}</span>
+<span class="code-syntax-keyword">}</span></pre>
+</div>
+<h3 class="font-headline text-2xl font-bold tracking-tight">The Psychology of Consistency</h3>
+<p class="font-body text-xl leading-relaxed text-on-surface/90">
+                        Cognitive load is the hidden tax on every digital experience. By architecting a system that prioritizes predictable patterns over novel interactions, we create space for the user's intellectual focus to remain on the content.
+                    </p>
+<!-- Pull Quote -->
+<blockquote class="py-12 my-12 relative">
+<span class="absolute top-0 left-0 text-9xl font-headline font-black text-primary/10 select-none">“</span>
+<p class="font-body italic text-4xl text-primary leading-tight relative z-10 max-w-xl">
+                            Design is not just what it looks like and feels like. <span class="font-bold underline decoration-4 underline-offset-8">Design is how it works.</span>
+</p>
+</blockquote>
+<p class="font-body text-xl leading-relaxed text-on-surface/90">
+                        In the end, the architecture of a design system is successful only if it empowers builders to create without friction. It is the silent partner in the creative process, providing the constraints that foster true innovation.
+                    </p>
+<!-- Share Section -->
+<div class="mt-24 pt-12 border-t-2 border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div>
+<h4 class="font-headline font-bold text-lg mb-2">Share this article</h4>
+<p class="font-label text-sm text-on-surface-variant">Spread the intellectual architectural spirit.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">link</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">alternate_email</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Reading (Bento-ish Grid) -->
+<section class="max-w-screen-xl mx-auto px-6 md:px-12 mt-32 mb-24">
+<h3 class="font-headline text-3xl font-black tracking-tighter mb-12">Related Reading</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Related 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+<img alt="Related article 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Interior of a minimalist concrete gallery with stark lighting and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK8Afq4dMU1wjz-y6YzRmWQ6WaeUgqt4BHSyjP5yqQtsaTgpJJ_2Ce_pExli1rcEQVB6UHxsX6nPBBSOoCgTQ8mGBwvC1T-qU5eydcbQnc7-cH0Y9LvyKoSRvvOgwNI2qb0fSnUSNuwVGNlu4lEThSFUfRivsKTYAQtmxf_zm6cu6d35Ics8tHWgTp9JvUVZnfHQ9XMC0oxs5Y8fNP7iaatfLWCW_adIrNczhDUyvzWKH_ohGSPUCdIXwQ5bAV7Bjz7FPngRI_BGri"/>
+</div>
+<span class="font-label text-[10px] tracking-widest text-primary font-bold uppercase">Engineering</span>
+<h4 class="font-headline text-xl font-bold mt-2 group-hover:text-primary transition-colors leading-tight">The Geometry of Component Lifecycle</h4>
+</div>
+<!-- Related 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+<img alt="Related article 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Clean modern office workspace with mid-century furniture and floor to ceiling windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgMdakN9mpl6dFoqTD7dFF2ysqKufmpFfsGscYLQE07oKnIZl9wIZcp047mw9czDuH19FOAikED_C3qvNkB2_aQc66yCo4whnJ0P02HWZWet0G4AJ4TgevSjDEqnr95fDKEQSQpX_UvcVbuZaQp4RvdoXgoQ6pMdmZlTEqQ9l2ID8dGMmRLfsn-8TM4GtGTLz6Oh6lMkFgGhdb6Qb4hiQ7zcv8Uo8uHWZ4dK9mQeGJDqUVqKxBesT8qAcyM9jZvDaHDddCefS-BgZ"/>
+</div>
+<span class="font-label text-[10px] tracking-widest text-primary font-bold uppercase">Theory</span>
+<h4 class="font-headline text-xl font-bold mt-2 group-hover:text-primary transition-colors leading-tight">Human-Centric Constraint Frameworks</h4>
+</div>
+<!-- Related 3 -->
+<div class="group cursor-pointer md:col-span-2 lg:col-span-1">
+<div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+<img alt="Related article 3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract close-up of metal and glass architectural details with high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeRnfno5jcm7U8J66Jay7XAmwgQdpiUDys3dFjtW7JDqq30e7BnHs9zj9oNeO3LdMlmyLZOuk1ezUyIKUZZ0Lj8I6s0FePQG8bcqO70Kb6yBYhSZ_yR4VdOinQR4mMbWo8SnR21cKgO1KDodUBKm6jshy59-URfiivoeLpk4y8jx2BWb9tzLlYj1lSrL7s5hYQSf1Z62SjKZOXqwPi_AaBdpTwilrIL71jRWeCNdDVAmd6tss0aSYXhtmm8uyVIh0gCsid4rvg9K-r"/>
+</div>
+<span class="font-label text-[10px] tracking-widest text-primary font-bold uppercase">Manuals</span>
+<h4 class="font-headline text-xl font-bold mt-2 group-hover:text-primary transition-colors leading-tight">Building the Perfect Documentation Engine</h4>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 bg-[#DACCB7] dark:bg-[#323232]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-['Manrope'] font-bold text-[#680A08] text-xl">The Digital Atelier</div>
+<p class="font-['Newsreader'] text-lg italic text-[#440001] dark:text-[#FFB4AA] text-center md:text-left">© 2024 The Digital Atelier. Built for the intellectual architect.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mt-8 md:mt-0">
+<a class="font-['Newsreader'] text-lg italic text-[#440001] dark:text-[#FFB4AA] opacity-80 hover:opacity-100 transition-all" href="#">Privacy</a>
+<a class="font-['Newsreader'] text-lg italic text-[#440001] dark:text-[#FFB4AA] opacity-80 hover:opacity-100 transition-all" href="#">Terms</a>
+<a class="font-['Newsreader'] text-lg italic text-[#440001] dark:text-[#FFB4AA] opacity-80 hover:opacity-100 transition-all" href="#">RSS Feed</a>
+<a class="font-['Newsreader'] text-lg italic text-[#440001] dark:text-[#FFB4AA] opacity-80 hover:opacity-100 transition-all" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body></html>

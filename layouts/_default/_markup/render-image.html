@@ -1,0 +1,31 @@
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+
+{{- $sizeKeywords := slice "wide" "medium" "small" -}}
+{{- $isSize := in $sizeKeywords $title -}}
+{{- $size := "" -}}
+{{- $caption := "" -}}
+{{- if $isSize -}}
+  {{- $size = $title -}}
+{{- else if $title -}}
+  {{- $caption = $title -}}
+{{- end -}}
+
+{{- $figureClass := "my-10 mx-6 md:mx-8" -}}
+{{- $imgClass := "rounded-xl w-full block" -}}
+
+{{- if eq $size "wide" -}}
+  {{- $figureClass = "my-10 -mx-6 md:-mx-12" -}}
+{{- else if eq $size "medium" -}}
+  {{- $figureClass = "my-10 mx-auto max-w-[75%]" -}}
+{{- else if eq $size "small" -}}
+  {{- $figureClass = "my-10 mx-auto max-w-[45%]" -}}
+{{- end -}}
+
+<figure class="{{ $figureClass }}">
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $imgClass }}">
+  {{- if $caption }}
+  <figcaption class="font-label text-xs text-on-surface-variant text-center">{{ $caption }}</figcaption>
+  {{- end }}
+</figure>
