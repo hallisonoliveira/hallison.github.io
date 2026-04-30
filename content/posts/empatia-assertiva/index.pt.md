@@ -44,7 +44,7 @@ A empatia nociva acontece quando nos importamos com as pessoas e com isso evitam
 
 O ponto central do livro, é quando nos importamos pessoalmente com as pessoas, entendemos seus anseios, inseguranças, personalidades, etc. Além disso, conseguimos confronta-las diretamente, dando feedback's verdadeiros e sucintos, a fim de orienta-los à atingirem seu melhor potencial. Para nos importarmos pessoalmente, é fundamental que nossa relação com os membros do time vá além do estritamente profissional e passe para uma relação mais pessoal. Problemas em casa, na família, insegurança quanto à carreira profissional e diferentes momentos de vida influenciam diretamente na postura das pessoas no trabalho. Por isso é importante que essa relação seja pessoal e mútua, você deve abrir-se pessoalmente para elas para que elas se sintam confortáveis em abrir-se pessoalmente para você. Só assim, é possível conhecer as pessoas verdadeiramente e ser assertivamente empático com elas.
 
-> Quando nos importamos pessoalmente, nossos feedback's se tornam mais verdadeiros, pois conseguimos entender com mais clareza as atitudes das pessoas. Esse é o ponto central para confrontar as pessoas diretamente, sem rodeios, sem nos colocarmos acima das pessoas. Apenas dando um feedback claro e sem maldade. A história que a autora conta sobre a Belvedere, sua golden retriever, é bem interessante e demonstra muito bem isso (leiam o livro =D).
+Quando nos importamos pessoalmente, nossos feedback's se tornam mais verdadeiros, pois conseguimos entender com mais clareza as atitudes das pessoas. Esse é o ponto central para confrontar as pessoas diretamente, sem rodeios, sem nos colocarmos acima das pessoas. Apenas dando um feedback claro e sem maldade. A história que a autora conta sobre a Belvedere, sua golden retriever, é bem interessante e demonstra muito bem isso (leiam o livro =D).
 
 ## Conclusão
 
@@ -56,26 +56,3 @@ Comecei esse resumo falando que liderar pessoas não é uma tarefa fácil e de f
 
 - [Site pessoal da Kim Scott](https://kimmalonescott.com/)
 - [Amazon](https://www.amazon.com.br/Empatia-Assertiva-Incisivo-Perder-Humanidade/dp/8550810789)
-
-Aqui é um `trecho de código` para testar a formatação
-
-```kotlin
-private const val BLA = "bla"
-
-fun main() {
-	val count: Int = 0
-}
-```
-
-```json
-{
-	"color": {
-		"semantic": {
-			"surface": {
-				"primary": { "value": "{color.primitive.neutral.900}" },
-				"accent": { "value": "{color.primitive.red.500}" }
-			}
-		}
-	}
-}
-```
