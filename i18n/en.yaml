@@ -1,0 +1,110 @@
+# Translation in English
+
+# Navigation
+nav_home:
+  other: Home
+
+nav_posts:
+  other: Articles
+
+nav_about:
+  other: About
+
+# Footer
+footer_tagline:
+  other: All rights reserved.
+
+footer_privacy:
+  other: Privacy
+
+footer_terms:
+  other: Terms
+
+# Posts
+posts_title:
+  other: Articles
+
+posts_description:
+  other: Exploration of ideas, architecture, code and best practices in software development.
+
+posts_empty:
+  other: No articles available at the moment.
+
+# Month names
+month_1:
+  other: January
+
+month_2:
+  other: February
+
+month_3:
+  other: March
+
+month_4:
+  other: April
+
+month_5:
+  other: May
+
+month_6:
+  other: June
+
+month_7:
+  other: July
+
+month_8:
+  other: August
+
+month_9:
+  other: September
+
+month_10:
+  other: October
+
+month_11:
+  other: November
+
+month_12:
+  other: December
+
+# Date format
+date_format:
+  other: "{{ .month }} {{ .day }}, {{ .year }}"
+
+# Post single
+author_label:
+  other: Author
+
+topics_label:
+  other: Topics
+
+reading_time:
+  other: "{{ .minutes }} min read"
+
+share_article:
+  other: Share this article
+
+share_tagline:
+  other: Spread the intellectual architectural spirit.
+
+related_reading:
+  other: Related Reading
+
+previous_article:
+  other: "← Previous"
+
+next_article:
+  other: "Next →"
+
+# Cookie consent
+cookie_message:
+  other: This site uses cookies to analyze traffic. Your privacy matters to us.
+
+cookie_accept:
+  other: Accept
+
+cookie_decline:
+  other: Decline
+
+cookie_manage:
+  other: Manage cookies

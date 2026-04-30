@@ -1,0 +1,32 @@
+{{- /* layouts/partials/cookie-consent.html */ -}}
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden bg-secondary-fixed border-t border-outline-variant px-6 py-4">
+  <div class="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="font-body text-sm text-on-surface">{{ i18n "cookie_message" }}</p>
+    <div class="flex gap-3 shrink-0">
+      <button id="cookie-decline" class="font-label text-sm uppercase tracking-widest text-primary opacity-70 hover:opacity-100 transition-opacity">
+        {{ i18n "cookie_decline" }}
+      </button>
+      <button id="cookie-accept" class="font-label text-sm uppercase tracking-widest bg-primary text-on-primary px-4 py-2 rounded-full hover:opacity-90 transition-opacity">
+        {{ i18n "cookie_accept" }}
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    var consent = localStorage.getItem('cookie-consent');
+    if (consent === null) banner.classList.remove('hidden');
+
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+      localStorage.setItem('cookie-consent', 'accepted');
+      banner.classList.add('hidden');
+      location.reload();
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', function() {
+      localStorage.setItem('cookie-consent', 'declined');
+      banner.classList.add('hidden');
+    });
+  })();
+</script>

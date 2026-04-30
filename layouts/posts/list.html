@@ -1,0 +1,84 @@
+{{ define "main" }}
+  <div class="max-w-screen-xl mx-auto">
+
+    <!-- Page Header -->
+    <section class="mb-24">
+      <h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+        {{ i18n "posts_title" }}
+      </h1>
+      <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+        {{ i18n "posts_description" }}
+      </p>
+    </section>
+
+    <!-- Posts List -->
+    {{- /* Posts filtered automatically by language via .pt.md / .en.md file suffixes */ -}}
+    {{- $languagePosts := where .Site.RegularPages "Type" "posts" -}}
+    <div class="space-y-12">
+      {{ range $languagePosts }}
+        <article class="group flex gap-8 border-b border-outline-variant/20 pb-12 hover:bg-surface-container-low/30 px-6 py-6 -mx-6 rounded-lg transition-colors duration-300">
+          <!-- Image -->
+          <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40">
+            <div class="relative overflow-hidden bg-surface-variant w-full h-full rounded-sm">
+              {{ if .Params.image }}
+                <img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                     src="{{ .Params.image }}" alt="{{ .Title }}">
+              {{ else }}
+                <div class="w-full h-full bg-gradient-to-br from-surface-container to-surface-variant"></div>
+              {{ end }}
+              <div class="absolute inset-0 bg-surface-tint/5 mix-blend-multiply"></div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-grow min-w-0">
+            <!-- Top: Category and Date -->
+            <div class="flex items-center justify-between gap-4 mb-3 font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">
+              <div class="flex items-center gap-3">
+                {{ if .Params.category }}
+                  <span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded-full whitespace-nowrap">
+                    {{ .Params.category }}
+                  </span>
+                {{ end }}
+              </div>
+              <time class="whitespace-nowrap" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ i18n "date_format" (dict "day" .Date.Day "month" (i18n (printf "month_%d" .Date.Month)) "year" .Date.Year) }}
+              </time>
+            </div>
+
+            <!-- Title -->
+            <h2 class="font-headline text-xl md:text-2xl font-bold text-on-surface leading-tight mb-3 group-hover:text-primary-container transition-colors duration-300">
+              <a href="{{ .RelPermalink }}" class="hover:underline">{{ .Title }}</a>
+            </h2>
+
+            <!-- Summary (3 lines max) -->
+            <p class="font-body text-sm md:text-base text-on-surface-variant leading-relaxed mb-4 line-clamp-3 flex-grow">
+              {{ .Summary }}
+            </p>
+
+            <!-- Tags -->
+            {{ if .Params.tags }}
+              <div class="flex flex-wrap gap-2">
+                {{ range .Params.tags }}
+                  <span class="font-label text-xs font-medium px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full">
+                    {{ . }}
+                  </span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    <!-- No posts message -->
+    {{ if eq (len $languagePosts) 0 }}
+      <div class="text-center py-32">
+        <p class="font-body text-xl text-on-surface-variant">
+          {{ i18n "posts_empty" }}
+        </p>
+      </div>
+    {{ end }}
+
+  </div>
+{{ end }}
