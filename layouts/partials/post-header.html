@@ -1,0 +1,45 @@
+<article class="max-w-screen-xl mx-auto">
+
+  <header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+    <div class="max-w-3xl">
+
+      <div class="flex items-center gap-4 mb-6 flex-wrap">
+        {{ if .Params.category }}
+          <span class="font-label text-xs tracking-widest text-primary font-bold bg-primary-fixed px-3 py-1 rounded-full uppercase">
+            {{ .Params.category }}
+          </span>
+        {{ end }}
+
+        <span class="font-label text-xs text-on-surface-variant">
+          {{ $month := i18n (printf "month_%d" .Date.Month) }}
+          {{ if ne .Site.Language "pt" }}
+            {{ $month = strings.ToUpper $month }}
+          {{ end }}
+          {{ i18n "date_format" (dict "day" .Date.Day "month" $month "year" .Date.Year) }}
+        </span>
+
+        <span class="font-label text-xs text-on-surface-variant flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">schedule</span> {{ i18n "reading_time" (dict "minutes" .ReadingTime) }}
+        </span>
+      </div>
+
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+        {{ .Title }}
+        {{ if .Params.subtitle }}
+          <span class="text-primary italic">{{ .Params.subtitle }}</span>
+        {{ end }}
+      </h1>
+
+    </div>
+  </header>
+
+  {{ if .Params.image }}
+    <div class="relative w-full aspect-[21/9] mb-24 overflow-hidden rounded-xl">
+      <img alt="{{ .Title }}"
+           class="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
+           src="{{ .Params.image }}">
+      <div class="absolute inset-0 bg-surface-tint opacity-5 pointer-events-none"></div>
+    </div>
+  {{ end }}
+
+</article>

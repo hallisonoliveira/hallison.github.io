@@ -1,0 +1,31 @@
+{{ $currentPermalink := .Permalink }}
+{{ $allInCategory := where (where .Site.RegularPages "Type" "posts") "Params.category" .Params.category }}
+{{ $filtered := where $allInCategory "Permalink" "ne" $currentPermalink }}
+{{ $related := first 3 (shuffle $filtered) }}
+
+{{ if $related }}
+  <section class="max-w-screen-xl mx-auto mt-24 mb-24">
+    <h3 class="font-headline text-3xl font-black tracking-tighter mb-12">{{ i18n "related_reading" }}</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {{ range $related }}
+        <div class="group cursor-pointer">
+          {{ if .Params.image }}
+            <a href="{{ .RelPermalink }}" class="block">
+              <div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden">
+                <img alt="{{ .Title }}"
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                     src="{{ .Params.image }}">
+              </div>
+            </a>
+          {{ end }}
+          {{ if .Params.category }}
+            <span class="font-label text-[10px] tracking-widest text-primary font-bold uppercase">{{ .Params.category }}</span>
+          {{ end }}
+          <h4 class="font-headline text-xl font-bold mt-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+            <a href="{{ .RelPermalink }}" class="hover:underline">{{ .Title }}</a>
+          </h4>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

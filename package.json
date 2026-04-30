@@ -7,6 +7,7 @@
     "validate:content": "node scripts/validate-i18n.js",
     "test:content": "node tests/validate-i18n.test.js",
     "test:build": "bash scripts/validate-build.sh",
+    "test": "playwright test",
     "test:e2e": "playwright test",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:ui": "playwright test --ui"
