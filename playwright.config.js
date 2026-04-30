@@ -2,16 +2,16 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './tests/e2e',
-  fullyParallel: false, // single Hugo server instance cannot handle parallel requests reliably
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: 0,
-  workers: 1, // single worker to avoid port conflicts with hugo server
+  workers: 1,
   reporter: 'list',
 
   webServer: {
-    command: 'hugo server --port 1313 --bind 0.0.0.0',
+    command: 'npm run hugo:server',
     url: 'http://localhost:1313',
-    reuseExistingServer: true,
+    reuseExistingServer: !process.env.CI,
     timeout: 30000,
   },
 

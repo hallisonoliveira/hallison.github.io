@@ -21,13 +21,13 @@
       {{ range $index, $post := $paginator.Pages }}
         {{ if eq $index 0 }}
           <!-- Featured Post -->
-          <article class="group">
+          <article class="group transition-colors duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               <!-- Image -->
               <div class="lg:col-span-5 relative overflow-hidden bg-surface-variant aspect-[4/3] rounded-sm">
                 {{ if .Params.image }}
-                  <img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                       src="{{ .Params.image }}" alt="{{ .Title }}">
+                  <img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                       src="{{ .RelPermalink }}/{{ .Params.image }}" alt="{{ .Title }}">
                 {{ else }}
                   <div class="w-full h-full bg-gradient-to-br from-surface-container to-surface-variant"></div>
                 {{ end }}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <title>{{ block "title" . }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
   <meta name="description" content="{{ .Site.Params.siteDescription }}">
 
   <!-- Fonts -->
