@@ -14,7 +14,7 @@
   {{ partial "ga4-script.html" . }}
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography,forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -130,6 +130,26 @@
       line-height: 1;
       pointer-events: none;
       user-select: none;
+    }
+    .prose figure img {
+      margin-bottom: 0;
+    }
+    .prose figcaption {
+      margin-top: 0.25rem;
+    }
+    .prose code::before,
+    .prose code::after {
+      content: '';
+    }
+    .prose pre code {
+      background-color: transparent;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+    .prose pre {
+      tab-size: 4;
+      -moz-tab-size: 4;
     }
     .prose-pre {
       position: relative;
