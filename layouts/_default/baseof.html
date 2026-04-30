@@ -103,7 +103,33 @@
       text-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
     .prose p:first-of-type::first-letter {
-      @apply text-7xl font-headline font-black mr-3 float-left text-primary;
+      font-size: 4.5rem;
+      line-height: 0.85;
+      font-family: Manrope;
+      font-weight: 900;
+      margin-right: 0.75rem;
+      float: left;
+      color: #440001;
+    }
+    .prose p:first-of-type {
+      font-size: 1.5rem;
+      line-height: 1.625;
+    }
+    .prose blockquote {
+      position: relative;
+    }
+    .prose blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 8rem;
+      font-family: Manrope;
+      font-weight: 900;
+      color: rgba(68, 0, 1, 0.1);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
     }
     .prose-pre {
       position: relative;

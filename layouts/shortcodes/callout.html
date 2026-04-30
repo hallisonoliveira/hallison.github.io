@@ -1,0 +1,8 @@
+{{ $title := .Get "title" | default "Note" }}
+
+<div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-primary my-8 not-prose">
+  <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">{{ $title }}</h4>
+  <p class="font-label text-sm text-on-surface-variant leading-relaxed">
+    {{ .Inner | markdownify }}
+  </p>
+</div>

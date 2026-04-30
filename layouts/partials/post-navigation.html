@@ -1,0 +1,26 @@
+{{ if or .PrevInSection .NextInSection }}
+  <nav class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 border-t-2 border-outline-variant/20 pt-16">
+    {{ $prev := .PrevInSection }}
+    {{ $next := .NextInSection }}
+
+    {{ if $prev }}
+      <a href="{{ $prev.RelPermalink }}" class="group text-left hover:opacity-70 transition-opacity duration-300">
+        <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2">{{ i18n "previous_article" }}</p>
+        <h3 class="font-headline text-lg font-bold text-on-surface group-hover:text-primary-container transition-colors duration-300">
+          {{ $prev.Title }}
+        </h3>
+      </a>
+    {{ else }}
+      <div></div>
+    {{ end }}
+
+    {{ if $next }}
+      <a href="{{ $next.RelPermalink }}" class="group text-right hover:opacity-70 transition-opacity duration-300">
+        <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2">{{ i18n "next_article" }}</p>
+        <h3 class="font-headline text-lg font-bold text-on-surface group-hover:text-primary-container transition-colors duration-300">
+          {{ $next.Title }}
+        </h3>
+      </a>
+    {{ end }}
+  </nav>
+{{ end }}
