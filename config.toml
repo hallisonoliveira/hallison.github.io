@@ -1,7 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'pt-br'
 title = 'Hallison Oliveira'
-theme = ''
 defaultContentLanguage = 'pt'
 defaultContentLanguageInSubdir = false
 enableMissingTranslationPlaceholders = true
