@@ -95,3 +95,16 @@ previous_article:
 
 next_article:
   other: "Next →"
+
+# Cookie consent
+cookie_message:
+  other: This site uses cookies to analyze traffic. Your privacy matters to us.
+
+cookie_accept:
+  other: Accept
+
+cookie_decline:
+  other: Decline
+
+cookie_manage:
+  other: Manage cookies

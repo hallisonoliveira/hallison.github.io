@@ -19,5 +19,16 @@
       </a>
     </div> -->
 
+    <button id="cookie-manage"
+      class="font-body text-sm italic text-primary dark:text-primary-fixed opacity-60 hover:opacity-100 transition-opacity">
+      {{ i18n "cookie_manage" }}
+    </button>
+    <script>
+      document.getElementById('cookie-manage').addEventListener('click', function() {
+        localStorage.removeItem('cookie-consent');
+        location.reload();
+      });
+    </script>
+
   </div>
 </footer>
