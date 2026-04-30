@@ -33,15 +33,14 @@
     }
   }
 
-  function getTargetUrl(targetLang) {
-    const mapper = window.NavigationMapper;
-    if (!mapper || typeof mapper.mapUrl !== 'function') {
-      console.error('NavigationMapper not available', { timestamp: new Date().toISOString() });
-      return targetLang === 'en'
-        ? '/en' + window.location.pathname
-        : window.location.pathname.replace(/^\/en/, '') || '/';
-    }
-    return mapper.mapUrl(window.location.pathname, targetLang);
+  function getTargetUrl() {
+    const button = document.getElementById('language-toggle');
+    const targetUrl = button && button.getAttribute('data-target-url');
+    if (targetUrl) return targetUrl;
+
+    console.warn('data-target-url not found, falling back to home', { timestamp: new Date().toISOString() });
+    const currentLang = getPageLang();
+    return currentLang === 'pt' ? '/en/' : '/';
   }
 
   function switchLanguage() {

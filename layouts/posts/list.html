@@ -22,7 +22,7 @@
             <div class="relative overflow-hidden bg-surface-variant w-full h-full rounded-sm">
               {{ if .Params.image }}
                 <img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                     src="{{ .Params.image }}" alt="{{ .Title }}">
+                     src="{{ .RelPermalink }}/{{ .Params.image }}" alt="{{ .Title }}">
               {{ else }}
                 <div class="w-full h-full bg-gradient-to-br from-surface-container to-surface-variant"></div>
               {{ end }}
