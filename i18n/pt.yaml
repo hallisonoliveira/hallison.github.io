@@ -108,3 +108,16 @@ cookie_decline:
 
 cookie_manage:
   other: Gerenciar cookies
+
+# 404
+not_found_title:
+  other: Página não encontrada
+
+not_found_message:
+  other: O endereço que você tentou acessar não existe ou foi movido.
+
+not_found_home:
+  other: Voltar à home
+
+not_found_posts:
+  other: Ver todos os posts

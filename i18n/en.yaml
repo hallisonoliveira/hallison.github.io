@@ -108,3 +108,16 @@ cookie_decline:
 
 cookie_manage:
   other: Manage cookies
+
+# 404
+not_found_title:
+  other: Page not found
+
+not_found_message:
+  other: The address you tried to access doesn't exist or has been moved.
+
+not_found_home:
+  other: Back to home
+
+not_found_posts:
+  other: See all posts
