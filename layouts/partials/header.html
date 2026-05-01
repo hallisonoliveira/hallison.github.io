@@ -30,7 +30,49 @@
 
     <div class="flex items-center gap-4">
       {{ partial "language-selector.html" . }}
+
+      {{- /* Mobile hamburger button */ -}}
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="material-symbols-outlined md:hidden text-on-surface dark:text-on-surface-variant cursor-pointer hover:opacity-70 transition-opacity"
+        aria-label="{{ i18n "mobile_menu_open" }}"
+        aria-expanded="false"
+        aria-controls="mobile-nav-panel"
+        data-close-label="{{ i18n "mobile_menu_close" }}"
+      >
+        menu
+      </button>
     </div>
 
+  </div>
+
+  {{- /* Mobile nav panel */ -}}
+  <div
+    id="mobile-nav-panel"
+    class="hidden md:hidden w-full border-t border-outline-variant/20 bg-surface dark:bg-surface"
+    role="navigation"
+    aria-label="{{ i18n "mobile_menu_label" }}"
+  >
+    {{- $current := .RelPermalink -}}
+    {{- $baseClass := "block px-8 py-3 font-headline font-bold tracking-tight text-on-surface dark:text-on-surface-variant hover:opacity-100 transition-opacity duration-200" -}}
+    {{- $activeClass := " text-primary-container dark:text-primary-fixed border-l-2 border-primary-container pl-7" -}}
+    {{- $inactiveClass := " opacity-70" -}}
+
+    <a href="{{ relLangURL "/" }}"
+       class="{{ $baseClass }}{{ if eq $current (relLangURL "/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+       {{ if eq $current (relLangURL "/") }}aria-current="page"{{ end }}>
+      {{ i18n "nav_home" }}
+    </a>
+    <a href="{{ relLangURL "/posts/" }}"
+       class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/posts/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+       {{ if strings.HasPrefix $current (relLangURL "/posts/") }}aria-current="page"{{ end }}>
+      {{ i18n "nav_posts" }}
+    </a>
+    <a href="{{ relLangURL "/about/" }}"
+       class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/about/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+       {{ if strings.HasPrefix $current (relLangURL "/about/") }}aria-current="page"{{ end }}>
+      {{ i18n "nav_about" }}
+    </a>
   </div>
 </nav>
