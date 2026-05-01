@@ -2,5 +2,5 @@
 
 ## Tarefas
 
-- [ ] 1.0 Estrutura estática do menu mobile
-- [ ] 2.0 Comportamento interativo e testes E2E
+- [x] 1.0 Estrutura estática do menu mobile
+- [x] 2.0 Comportamento interativo e testes E2E
