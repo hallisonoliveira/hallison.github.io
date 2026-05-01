@@ -10,6 +10,16 @@ nav_posts:
 nav_about:
   other: Sobre
 
+# Menu mobile (acessibilidade)
+mobile_menu_open:
+  other: Abrir menu de navegação
+
+mobile_menu_close:
+  other: Fechar menu de navegação
+
+mobile_menu_label:
+  other: Navegação mobile
+
 # Footer
 footer_tagline:
   other: Todos os direitos reservados.
