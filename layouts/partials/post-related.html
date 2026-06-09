@@ -14,7 +14,7 @@
               <div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden">
                 <img alt="{{ .Title }}"
                      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                     src="{{ .Params.image }}">
+                     src="{{ .RelPermalink }}/{{ .Params.image }}">
               </div>
             </a>
           {{ end }}
