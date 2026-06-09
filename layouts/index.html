@@ -73,7 +73,7 @@
               <div class="lg:col-span-5 relative overflow-hidden bg-secondary-fixed aspect-[4/3] rounded-sm order-last lg:order-none">
                 {{ if .Params.image }}
                   <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-90 transition-all duration-700"
-                       src="{{ .Params.image }}" alt="{{ .Title }}">
+                       src="{{ .RelPermalink }}/{{ .Params.image }}" alt="{{ .Title }}">
                 {{ else }}
                   <div class="w-full h-full bg-gradient-to-br from-secondary-fixed to-secondary-container"></div>
                 {{ end }}
