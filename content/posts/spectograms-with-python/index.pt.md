@@ -239,7 +239,7 @@ plt.show()
 
 Para tornar tudo mais concreto, usei como exemplo a faixa **"That's the Way I Wanna Rock and Roll"**, do AC/DC:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XkEDamgJGfs" title="AC/DC - That's the Way I Wanna Rock and Roll" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube 3zy2pBoTuOQ >}}
 
 Rodando o script sobre essa faixa, o resultado é a imagem abaixo, com os três gráficos empilhados.
 
@@ -249,7 +249,7 @@ Espectrograma de "That's the Way I Wanna Rock and Roll" do AC/DC
 
 Dois pontos ficam bem evidentes ao analisar essa imagem. O primeiro é **a guitarra no início da música**: logo nos primeiros segundos, o riff aparece nos espectrogramas como faixas de energia concentradas nas frequências médias e médio-agudas, com harmônicos bem definidos se repetindo no eixo do tempo. É um padrão característico de um instrumento com afinação bem definida, bem diferente do "borrão" de energia que o mesmo riff produz na waveform.
 
-O segundo é **o break no minuto 2:43**, que é o ponto mais fácil de identificar em qualquer um dos três gráficos. Na waveform, a amplitude despenca visivelmente por um instante. Nos dois espectrogramas, a mesma região aparece como uma faixa vertical muito mais escura, indicando uma queda abrupta de energia em praticamente todas as frequências ao mesmo tempo, típica de uma pausa na instrumentação.
+O segundo é **o break no minuto 2:47**, que é o ponto mais fácil de identificar em qualquer um dos três gráficos. Na waveform, a amplitude despenca visivelmente por um instante. Nos dois espectrogramas, a mesma região aparece como uma faixa vertical muito mais escura, indicando uma queda abrupta de energia em praticamente todas as frequências ao mesmo tempo, típica de uma pausa na instrumentação.
 
 Esse tipo de análise mostra bem o valor de olhar os três gráficos juntos: a waveform entrega uma pista rápida de que "algo aconteceu" naquele instante, mas é o espectrograma que confirma que se trata de uma queda de energia em várias faixas de frequência simultaneamente, e não apenas em uma banda isolada.
 
