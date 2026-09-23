@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html class="light" lang="{{ .Site.Language.Lang }}">
 <head>
+  {{- $description := (.Description | default .Site.Params.siteDescription) | plainify | htmlUnescape -}}
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>{{ block "title" . }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Site.Params.siteDescription }}">
+  <meta name="description" content="{{ $description }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta name="twitter:description" content="{{ $description }}">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>

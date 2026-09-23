@@ -1,6 +1,7 @@
 ---
 title: "kubectl + cURL - Validando APIs internas em Kubernetes"
 date: 2026-06-08
+description: "Um guia prático para validar APIs internas em Kubernetes usando kubectl e cURL."
 image: cover.png
 category: Infraestrutura
 tags:
