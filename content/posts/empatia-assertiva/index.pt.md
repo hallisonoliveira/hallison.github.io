@@ -1,6 +1,8 @@
 ---
 title: "Empatia Assertiva - Como ser um líder incisivo sem perder a humanidade"
+translationKey: "posts/empatia-assertiva"
 date: 2026-04-29
+description: "Um resumo de Empatia Assertiva, de Kim Scott, sobre como liderar com franqueza, humanidade e resultados."
 image: cover.png
 category: Livros
 tags:

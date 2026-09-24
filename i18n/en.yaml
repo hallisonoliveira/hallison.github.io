@@ -106,6 +106,12 @@ previous_article:
 next_article:
   other: "Next →"
 
+comments_title:
+  other: Comments
+
+comments_description:
+  other: Join the conversation with your GitHub account.
+
 # Cookie consent
 cookie_message:
   other: This site uses cookies to analyze traffic. Your privacy matters to us.

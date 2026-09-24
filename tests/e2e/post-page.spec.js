@@ -20,4 +20,19 @@ test.describe('Post Page', () => {
     await page.goto('/posts/empatia-assertiva/');
     await expect(page.locator('h1.font-headline')).toBeVisible();
   });
+
+  test('should render Giscus automatically with the page language and stable article term', async ({ page }) => {
+    await page.goto('/posts/empatia-assertiva/');
+    await expect(page.locator('[data-comments]')).toBeVisible();
+    await expect(page.locator('#comments script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-lang', 'pt');
+    await expect(page.locator('#comments script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-term', 'posts/empatia-assertiva');
+    await expect(page.locator('[data-comments-load]')).toHaveCount(0);
+
+    await page.goto('/en/posts/kubectl-curl-api-kubernetes/');
+    await expect(page.locator('#comments script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-lang', 'en');
+    await expect(page.locator('#comments script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-term', 'posts/kubectl-curl-api-kubernetes');
+
+    await page.goto('/posts/kubectl-curl-api-kubernetes/');
+    await expect(page.locator('#comments script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-term', 'posts/kubectl-curl-api-kubernetes');
+  });
 });

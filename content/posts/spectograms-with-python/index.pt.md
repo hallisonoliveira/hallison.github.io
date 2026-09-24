@@ -1,6 +1,8 @@
 ---
 title: Gerando Espectogramas de Música com Python
+translationKey: "posts/spectograms-with-python"
 date: 2026-07-09
+description: "Entenda espectrogramas e gere visualizações de áudio com Python, librosa e matplotlib."
 image: cover.png
 category: Audio
 tags:
