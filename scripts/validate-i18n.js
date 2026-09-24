@@ -5,6 +5,15 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const REQUIRED_FIELDS = ['title', 'date', 'description', 'translationKey'];
+const AI_USAGE_VALUES = new Set([
+  'none',
+  'review',
+  'translation',
+  'code',
+  'visual',
+  'research',
+  'assistance'
+]);
 const DEFAULT_POSTS_DIR = path.join(__dirname, '..', 'content', 'posts');
 
 function extractFrontmatter(content) {
@@ -31,6 +40,30 @@ function validateFile(filePath) {
   for (const field of REQUIRED_FIELDS) {
     if (!frontmatter || frontmatter[field] === undefined || frontmatter[field] === null || frontmatter[field] === '') {
       return { valid: false, reason: `Missing required field "${field}"` };
+    }
+  }
+
+  // ai_usage is optional only for posts published before this metadata was
+  // introduced. New posts receive it from the archetype.
+  if (frontmatter.ai_usage !== undefined) {
+    if (!Array.isArray(frontmatter.ai_usage) || frontmatter.ai_usage.length === 0) {
+      return { valid: false, reason: 'Field "ai_usage" must be a non-empty list' };
+    }
+
+    const invalidValues = frontmatter.ai_usage.filter(value =>
+      typeof value !== 'string' || !AI_USAGE_VALUES.has(value)
+    );
+
+    if (invalidValues.length > 0) {
+      return { valid: false, reason: `Invalid ai_usage value(s): ${invalidValues.join(', ')}` };
+    }
+
+    if (new Set(frontmatter.ai_usage).size !== frontmatter.ai_usage.length) {
+      return { valid: false, reason: 'ai_usage values must not be duplicated' };
+    }
+
+    if (frontmatter.ai_usage.includes('none') && frontmatter.ai_usage.length > 1) {
+      return { valid: false, reason: 'ai_usage value "none" cannot be combined with other values' };
     }
   }
 

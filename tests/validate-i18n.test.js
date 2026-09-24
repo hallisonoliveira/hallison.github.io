@@ -50,6 +50,43 @@ test('valid file exits 0 and shows checkmark', () => {
   assert.ok(result.stdout.includes('✅'), 'Expected ✅ in output');
 });
 
+test('valid ai_usage list exits 0', () => {
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\nai_usage:\n  - review\n  - translation\n---\nContent\n');
+  const result = run([file]);
+  fs.unlinkSync(file);
+  assert.strictEqual(result.code, 0, `Expected exit 0, got ${result.code}`);
+});
+
+test('none cannot be combined with other ai_usage values', () => {
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\nai_usage:\n  - none\n  - review\n---\nContent\n');
+  const result = run([file]);
+  fs.unlinkSync(file);
+  assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
+  assert.ok(result.stderr.includes('cannot be combined'), 'Expected mutually-exclusive value error');
+});
+
+test('invalid ai_usage values exit 1', () => {
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\nai_usage:\n  - drafting\n---\nContent\n');
+  const result = run([file]);
+  fs.unlinkSync(file);
+  assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
+  assert.ok(result.stderr.includes('Invalid ai_usage value'), 'Expected invalid value error');
+});
+
+test('ai_usage must be a non-empty list without duplicate values', () => {
+  const scalarFile = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\nai_usage: review\n---\nContent\n');
+  const scalarResult = run([scalarFile]);
+  fs.unlinkSync(scalarFile);
+  assert.strictEqual(scalarResult.code, 1, `Expected exit 1, got ${scalarResult.code}`);
+  assert.ok(scalarResult.stderr.includes('non-empty list'), 'Expected list error');
+
+  const duplicateFile = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\nai_usage:\n  - review\n  - review\n---\nContent\n');
+  const duplicateResult = run([duplicateFile]);
+  fs.unlinkSync(duplicateFile);
+  assert.strictEqual(duplicateResult.code, 1, `Expected exit 1, got ${duplicateResult.code}`);
+  assert.ok(duplicateResult.stderr.includes('must not be duplicated'), 'Expected duplicate value error');
+});
+
 // --- Missing frontmatter ---
 test('missing frontmatter exits 1 with error message', () => {
   const file = writeTempFile('Just plain content without frontmatter\n');

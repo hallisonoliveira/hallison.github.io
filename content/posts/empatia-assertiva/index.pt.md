@@ -10,6 +10,8 @@ tags:
   - empatia assertiva
   - kim scott
 draft: false
+ai_usage:
+  - none
 ---
 
 Liderar pessoas não é uma tarefa fácil, fato que é bastante comentado e é origem de vários conteúdos pelo mundo a fora. Vários desses conteúdos abordam o desafio central da liderança: pessoas. As diferentes personalidades, opiniões, momentos de vida, experiências, etc, influenciam na forma como o líder gera o time, pois é preciso sempre um cuidado para que sua liderança não se torne uma tirania (ou uma liderança totalmente omissa), e que também consiga trazer resultados satisfatórios para a empresa e que sejam motivo de orgulho para o time. É justamente na forma como o líder deve tratar as pessoas que o livro **Empatia assertiva: como ser um líder incisivo sem perder a humanidade** se baseia. Nele, a autora [Kim Scott](https://kimmalonescott.com/bio) traz diversas sugestões práticas baseadas em sua própria experiência, de como os líderes podem levar seus times ao sucesso sem que o lado humano da liderança seja deixado de lado.

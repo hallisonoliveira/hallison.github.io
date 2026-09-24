@@ -26,6 +26,11 @@
          {{ if strings.HasPrefix $current (relLangURL "/about/") }}aria-current="page"{{ end }}>
         {{ i18n "nav_about" }}
       </a>
+      <a href="{{ relLangURL "/ai-policy/" }}"
+         class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/ai-policy/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+         {{ if strings.HasPrefix $current (relLangURL "/ai-policy/") }}aria-current="page"{{ end }}>
+        {{ i18n "nav_ai_policy" }}
+      </a>
     </div>
 
     <div class="flex items-center gap-4">
@@ -73,6 +78,11 @@
        class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/about/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
        {{ if strings.HasPrefix $current (relLangURL "/about/") }}aria-current="page"{{ end }}>
       {{ i18n "nav_about" }}
+    </a>
+    <a href="{{ relLangURL "/ai-policy/" }}"
+       class="{{ $baseClass }}{{ if strings.HasPrefix $current (relLangURL "/ai-policy/") }}{{ $activeClass }}{{ else }}{{ $inactiveClass }}{{ end }}"
+       {{ if strings.HasPrefix $current (relLangURL "/ai-policy/") }}aria-current="page"{{ end }}>
+      {{ i18n "nav_ai_policy" }}
     </a>
   </div>
 </nav>

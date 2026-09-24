@@ -43,4 +43,6 @@ O template base carrega Tailwind CSS por CDN e declara a configuração de cores
 
 Comentários são um componente opcional de post em `layouts/partials/comments.html`. Quando configurado, o componente carrega o Giscus apenas após uma ação explícita do leitor; os comentários são armazenados em GitHub Discussions. Veja [Comentários](comments.md) para configuração e operação.
 
+O uso de IA generativa em um post é declarado pelo frontmatter `ai_usage` e apresentado por `layouts/partials/post-ai-usage.html` ao final do artigo. A política e a definição das categorias ficam nas páginas localizadas `content/ai-policy/index.pt.md` e `content/ai-policy/index.en.md`.
+
 `public/` e `resources/` são artefatos de build: a fonte de verdade são os arquivos de conteúdo, layouts, configuração e ativos em `static/`.

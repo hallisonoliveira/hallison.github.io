@@ -11,6 +11,13 @@ tags:
   - curl
   - cluster
 draft: false
+ai_usage:
+  - review
+  - translation
+  - code
+  - visual
+  - research
+  - assistance
 ---
 
 When a microservice runs **in a Kubernetes cluster**, checking if it is working using `curl` might seem simple but its not because some `404` errors and uncertanty about the namespace and routes can happen.

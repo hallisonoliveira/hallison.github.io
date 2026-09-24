@@ -11,6 +11,12 @@ tags:
   - curl
   - cluster
 draft: false
+ai_usage:
+  - review
+  - code
+  - visual
+  - research
+  - assistance
 ---
 
 Quando um microserviço roda **dentro do cluster**, bater nele via `curl` parece simples mas pode não ser, pois podem aparecer erros `404`, dúvidas de _namespace_, ou incertezas sobre qual é a rota real/correta.  

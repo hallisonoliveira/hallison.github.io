@@ -1,0 +1,19 @@
+{{- $usage := .Params.ai_usage -}}
+{{- if $usage -}}
+  <section class="border-l-4 border-primary-container bg-secondary-fixed px-6 py-5" aria-labelledby="ai-usage-title">
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined mt-0.5 text-primary-container" aria-hidden="true">auto_awesome</span>
+      <div class="font-label text-sm leading-relaxed text-on-secondary-fixed">
+        <p id="ai-usage-title">
+          <strong>{{ i18n "ai_usage_label" }}:</strong>
+          {{- range $index, $value := $usage -}}
+            {{- if $index }} {{ end -}}
+            <span class="inline-block rounded-full bg-surface-container-high px-2 py-0.5 text-xs font-medium text-on-surface">{{ i18n (printf "ai_usage_%s" $value) }}</span>
+          {{- end -}}
+          <span class="mx-1 text-outline" aria-hidden="true">—</span>
+          <a class="text-primary-container underline underline-offset-2 hover:opacity-80" href="{{ "ai-policy/" | relLangURL }}">{{ i18n "ai_policy_link" }}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+{{- end -}}
