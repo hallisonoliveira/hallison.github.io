@@ -12,6 +12,6 @@ Since 2019, I've focused on the Android ecosystem, building robust solutions for
 
 Currently, I dedicate my studies and work to backend development, Kubernetes, containers and OpenTelemetry, seeking a deep understanding of how metrics, logs and traces can elevate the reliability of complex systems.
 
-Beyond Code — My connection with audio goes back to childhood. I'm fascinated by the physics behind sound — from standing waves to acoustic reflections — and I'm a vinyl record enthusiast. This blend of analog passion and digital expertise gave rise to Primmo Audio Lab (https://primmoaudio.com/), a tool that uses neural networks and digital signal processing (DSP) to restore vinyl and cassette recordings.
+Beyond Code — My connection with audio goes back to childhood. I'm fascinated by the physics behind sound — from standing waves to acoustic reflections — and I'm an enthusiast of vinyl records, cassette tapes and vintage audio. This passion for the analog world also connects with my interest in technology and digital signal processing.
 
 This blog is my "idea laboratory", where I share learnings about software engineering, observability, audio and everything that involves technology.

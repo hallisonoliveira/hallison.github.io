@@ -12,6 +12,6 @@ Desde 2019, direcionei meu foco para o ecossistema Android, construindo soluçõ
 
 Atualmente, dedico meus estudos e trabalho ao desenvolvimento backend, Kubernetes, containers e OpenTelemetry, buscando entender a fundo como métricas, logs e traces podem elevar a confiabilidade de sistemas complexos.
 
-Além do Código — Minha conexão com o áudio vem desde a infância. Sou fascinado pela física por trás do som — de ondas estacionárias a reflexões acústicas — e um entusiasta de discos de vinil. Essa mistura de paixão analógica com expertise digital deu vida ao Primmo Audio Lab (https://primmoaudio.com/), uma ferramenta que utiliza redes neurais e processamento de sinais (DSP) para restaurar gravações de vinil e fitas K7.
+Além do Código — Minha conexão com o áudio vem desde a infância. Sou fascinado pela física por trás do som — de ondas estacionárias a reflexões acústicas — e entusiasta de discos de vinil, fitas K7 e áudio vintage. Essa paixão pelo universo analógico também se conecta ao meu interesse por tecnologia e processamento digital de sinais.
 
 Este blog é o meu "laboratório" de ideias, onde compartilho aprendizados sobre engenharia de software, observabilidade, áudio e tudo o que envolve tecnologia.
