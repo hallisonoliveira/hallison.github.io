@@ -10,6 +10,11 @@ tags:
     - python
     - espectorama
 draft: false
+ai_usage:
+  - review
+  - code
+  - visual
+  - research
 ---
 
 Se você já trabalhou com áudio, provavelmente já esbarrou na palavra **espectrograma**. Ele é uma das formas mais poderosas de visualizar um sinal de áudio porque mostra ao mesmo tempo o que uma forma de onda simples não consegue: quais frequências estão presentes no som e como elas mudam ao longo do tempo.

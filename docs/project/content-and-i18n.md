@@ -29,9 +29,15 @@ translationKey: "posts/slug-do-post"
 draft: false
 tags: []
 categories: []
+ai_usage:
+  - none
 ```
 
 `image`, `category` e `tags` são usados nos posts existentes quando pertinentes. O validador de conteúdo exige `title`, `date`, `description` e `translationKey` em arquivos de post; mantenha o YAML válido e datas em formato ISO.
+
+`ai_usage` registra o uso de IA generativa e é uma lista sem valores repetidos, com um ou mais destes valores: `none`, `review`, `translation`, `code`, `visual`, `research` e `assistance`. `none` é exclusivo e não pode ser combinado com outra categoria. O arquétipo já inclui `none` para novos posts. Posts publicados antes da introdução desse metadado podem não declará-lo até que o histórico editorial seja confirmado; nesse caso, o selo não é exibido.
+
+O partial `post-ai-usage.html` mostra o selo ao fim do artigo e direciona para a página de política localizada em `/ai-policy/` ou `/en/ai-policy/`.
 
 `translationKey` é o identificador estável do artigo. As versões traduzidas de um mesmo post devem usar exatamente o mesmo valor. Além de ligar as traduções no Hugo, ele identifica a discussão compartilhada do Giscus; não o altere ao mudar o título ou o slug.
 

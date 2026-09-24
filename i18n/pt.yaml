@@ -10,6 +10,9 @@ nav_posts:
 nav_about:
   other: Sobre
 
+nav_ai_policy:
+  other: Uso de IA
+
 # Menu mobile (acessibilidade)
 mobile_menu_open:
   other: Abrir menu de navegação
@@ -111,6 +114,33 @@ comments_title:
 
 comments_description:
   other: Participe da conversa usando sua conta do GitHub.
+
+ai_usage_label:
+  other: Uso de IA
+
+ai_usage_none:
+  other: Nenhum
+
+ai_usage_review:
+  other: Revisão
+
+ai_usage_translation:
+  other: Tradução
+
+ai_usage_code:
+  other: Código
+
+ai_usage_visual:
+  other: Visual
+
+ai_usage_research:
+  other: Pesquisa
+
+ai_usage_assistance:
+  other: Assistência
+
+ai_policy_link:
+  other: Sobre o uso de IA
 
 # Cookie consent
 cookie_message:
