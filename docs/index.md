@@ -14,6 +14,7 @@ Leia os documentos por área antes de alterar a respectiva parte do sistema. Os 
 - [Conteúdo e internacionalização](project/content-and-i18n.md) — modelo editorial e regras de localização.
 - [Desenvolvimento e qualidade](project/development.md) — comandos, validações e testes.
 - [Entrega](project/deployment.md) — build e hospedagem.
+- [Comentários](project/comments.md) — integração opcional com Giscus e GitHub Discussions.
 
 ## Manutenção
 

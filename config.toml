@@ -27,6 +27,18 @@ enableMissingTranslationPlaceholders = true
   author = 'Hallison'
   email = 'hallisoncwb@gmail.com'
 
+  [params.comments]
+    # The component stays hidden until the required Giscus IDs are configured.
+    enabled = true
+
+    [params.comments.giscus]
+      repo = "hallisonoliveira/hallison.github.io"
+      repoId = "R_kgDOSKG9AQ"
+      category = "Blog Comments"
+      categoryId = "DIC_kwDOSKG9Ac4DGQzG"
+      mapping = "specific"
+      reactionsEnabled = true
+
   [[params.socialLinks]]
     name = "Github"
     url = "https://github.com/hallisonoliveira"

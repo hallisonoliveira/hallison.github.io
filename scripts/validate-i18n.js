@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-const REQUIRED_FIELDS = ['title', 'date', 'description'];
+const REQUIRED_FIELDS = ['title', 'date', 'description', 'translationKey'];
 const DEFAULT_POSTS_DIR = path.join(__dirname, '..', 'content', 'posts');
 
 function extractFrontmatter(content) {

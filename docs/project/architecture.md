@@ -41,4 +41,6 @@ O português é o idioma padrão. Use `relLangURL` nos layouts para links intern
 
 O template base carrega Tailwind CSS por CDN e declara a configuração de cores e fontes inline. A navegação, consentimento de cookies, analytics e rodapé são partials. Scripts de comportamento do cliente são servidos de `static/js/`.
 
+Comentários são um componente opcional de post em `layouts/partials/comments.html`. Quando configurado, o componente carrega o Giscus apenas após uma ação explícita do leitor; os comentários são armazenados em GitHub Discussions. Veja [Comentários](comments.md) para configuração e operação.
+
 `public/` e `resources/` são artefatos de build: a fonte de verdade são os arquivos de conteúdo, layouts, configuração e ativos em `static/`.

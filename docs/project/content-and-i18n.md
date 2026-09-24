@@ -25,12 +25,15 @@ O frontmatter de um post precisa conter:
 title: "Título do post"
 date: 2026-09-23
 description: "Resumo curto para metadados e listagens."
+translationKey: "posts/slug-do-post"
 draft: false
 tags: []
 categories: []
 ```
 
-`image`, `category` e `tags` são usados nos posts existentes quando pertinentes. O validador de conteúdo exige `title`, `date` e `description` em arquivos de post; mantenha o YAML válido e datas em formato ISO.
+`image`, `category` e `tags` são usados nos posts existentes quando pertinentes. O validador de conteúdo exige `title`, `date`, `description` e `translationKey` em arquivos de post; mantenha o YAML válido e datas em formato ISO.
+
+`translationKey` é o identificador estável do artigo. As versões traduzidas de um mesmo post devem usar exatamente o mesmo valor. Além de ligar as traduções no Hugo, ele identifica a discussão compartilhada do Giscus; não o altere ao mudar o título ou o slug.
 
 # Páginas de seção
 

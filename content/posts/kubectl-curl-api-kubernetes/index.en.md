@@ -1,5 +1,6 @@
 ---
 title: "kubectl + cURL - Validating internal APIs on Kubernetes"
+translationKey: "posts/kubectl-curl-api-kubernetes"
 date: 2026-06-08
 description: "A practical guide to validating internal Kubernetes APIs with kubectl and cURL."
 image: cover.png

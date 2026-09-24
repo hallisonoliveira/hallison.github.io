@@ -1,0 +1,43 @@
+{{- $comments := .Site.Params.comments -}}
+{{- $giscus := $comments.giscus -}}
+{{- $isPost := and .IsPage (eq .Section "posts") -}}
+{{- $isEnabled := and $comments.enabled $giscus.repo $giscus.repoId $giscus.category $giscus.categoryId -}}
+
+{{- if and $isPost $isEnabled (ne .Params.comments false) -}}
+  {{- $language := "en" -}}
+  {{- if eq .Site.Language.Lang "pt" -}}
+    {{- $language = "pt" -}}
+  {{- end -}}
+
+  <section
+    id="comments"
+    class="pt-12 border-t-2 border-outline-variant/20"
+    aria-labelledby="comments-title"
+    data-comments
+  >
+    <div class="mb-6">
+      <h2 id="comments-title" class="font-headline font-bold text-2xl mb-2">{{ i18n "comments_title" }}</h2>
+      <p class="font-label text-sm text-on-surface-variant">{{ i18n "comments_description" }}</p>
+    </div>
+
+    <div class="mt-8">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="{{ $giscus.repo }}"
+        data-repo-id="{{ $giscus.repoId }}"
+        data-category="{{ $giscus.category }}"
+        data-category-id="{{ $giscus.categoryId }}"
+        data-mapping="{{ $giscus.mapping | default "specific" }}"
+        data-term="{{ .Params.translationKey }}"
+        data-strict="0"
+        data-reactions-enabled="{{ if $giscus.reactionsEnabled }}1{{ else }}0{{ end }}"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="{{ $language }}"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
+  </section>
+{{- end -}}

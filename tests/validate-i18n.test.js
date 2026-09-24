@@ -43,7 +43,7 @@ function test(name, fn) {
 
 // --- Valid frontmatter ---
 test('valid file exits 0 and shows checkmark', () => {
-  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\n---\nContent\n');
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Test article\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.strictEqual(result.code, 0, `Expected exit 0, got ${result.code}`);
@@ -62,7 +62,7 @@ test('missing frontmatter exits 1 with error message', () => {
 
 // --- Missing required field: date ---
 test('missing date field exits 1', () => {
-  const file = writeTempFile('---\ntitle: Test\ndescription: Desc\n---\nContent\n');
+  const file = writeTempFile('---\ntitle: Test\ndescription: Desc\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
@@ -71,7 +71,7 @@ test('missing date field exits 1', () => {
 
 // --- Missing required field: description ---
 test('missing description field exits 1', () => {
-  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\n---\nContent\n');
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
@@ -80,7 +80,7 @@ test('missing description field exits 1', () => {
 
 // --- Missing required field: title ---
 test('missing title field exits 1', () => {
-  const file = writeTempFile('---\ndate: 2024-04-16T00:00:00Z\ndescription: Desc\n---\nContent\n');
+  const file = writeTempFile('---\ndate: 2024-04-16T00:00:00Z\ndescription: Desc\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
@@ -89,7 +89,7 @@ test('missing title field exits 1', () => {
 
 // --- Invalid YAML ---
 test('invalid YAML exits 1 with YAML error', () => {
-  const file = writeTempFile('---\ntitle: [unclosed bracket\ndate: 2024-04-16\ndescription: Desc\n---\nContent\n');
+  const file = writeTempFile('---\ntitle: [unclosed bracket\ndate: 2024-04-16\ndescription: Desc\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
@@ -104,9 +104,17 @@ test('real posts in content/posts/ all pass', () => {
   assert.ok(!result.stderr.includes('❌'), 'Expected no errors in real posts');
 });
 
+test('missing translation key exits 1', () => {
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Desc\n---\nContent\n');
+  const result = run([file]);
+  fs.unlinkSync(file);
+  assert.strictEqual(result.code, 1, `Expected exit 1, got ${result.code}`);
+  assert.ok(result.stderr.includes('Missing required field "translationKey"'), 'Expected missing translationKey message');
+});
+
 // --- Summary output ---
 test('summary line goes to stdout on success and not to stderr', () => {
-  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Desc\n---\nContent\n');
+  const file = writeTempFile('---\ntitle: Test\ndate: 2024-04-16T00:00:00Z\ndescription: Desc\ntranslationKey: posts/test\n---\nContent\n');
   const result = run([file]);
   fs.unlinkSync(file);
   assert.ok(result.stdout.includes('Summary:'), 'Expected Summary in stdout');
