@@ -276,9 +276,9 @@ Esse tipo de análise mostra bem o valor de olhar os três gráficos juntos: a w
 
 ## Referências
 
-- Documentação oficial do librosa: https://librosa.org/doc/latest/index.html
-- Documentação do NumPy: https://numpy.org/doc/
-- Documentação do Matplotlib: https://matplotlib.org/stable/index.html
-- Smith, J.O. *Spectral Audio Signal Processing*, Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. https://ccrma.stanford.edu/~jos/sasp/
-- Wikipedia: Short-time Fourier transform — https://en.wikipedia.org/wiki/Short-time_Fourier_transform
-- Wikipedia: Mel scale — https://en.wikipedia.org/wiki/Mel_scale
+- [Documentação oficial do librosa](https://librosa.org/doc/latest/index.html)
+- [Documentação do NumPy](https://numpy.org/doc/)
+- [Documentação do Matplotlib](https://matplotlib.org/stable/index.html)
+- [J. O. Smith, *Spectral Audio Signal Processing*, CCRMA, Stanford University](https://ccrma.stanford.edu/~jos/sasp/)
+- [Wikipedia: Short-time Fourier transform](https://en.wikipedia.org/wiki/Short-time_Fourier_transform)
+- [Wikipedia: Mel scale](https://en.wikipedia.org/wiki/Mel_scale)
