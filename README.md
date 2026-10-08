@@ -4,12 +4,14 @@ Blog pessoal estático construído com [Hugo](https://gohugo.io/), com interface
 
 ## Início rápido
 
-Pré-requisitos: Hugo e Node.js. Para rodar os testes E2E no Windows, o Hugo também deve estar disponível no WSL em `/snap/bin/hugo`.
+Pré-requisitos: Node.js e npm. Instale as dependências do projeto e inicie o servidor:
 
 ```bash
-npm install
+make setup
 make dev
 ```
+
+`make setup` instala as dependências JavaScript do `package-lock.json` e, se Hugo estiver ausente, instala Hugo pelo Homebrew no macOS. Em outros sistemas, instale Hugo separadamente e deixe-o disponível no `PATH`. O deploy usa Hugo `0.92.2`, conforme [`vercel.json`](vercel.json). Para rodar os testes E2E no Windows, o Hugo também deve estar disponível no WSL em `/snap/bin/hugo`.
 
 O servidor local fica disponível em `http://localhost:1313`.
 

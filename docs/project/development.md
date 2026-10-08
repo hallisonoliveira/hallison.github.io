@@ -17,12 +17,13 @@ sources:
 
 # Pré-requisitos
 
-O projeto usa Hugo e Node.js. Os testes end-to-end usam Playwright. Em Windows, `npm run hugo:server` chama o binário Hugo pelo WSL em `/snap/bin/hugo`; confirme esse pré-requisito antes de diagnosticar uma falha de servidor de testes.
+O projeto usa Hugo, Node.js e npm. `make setup` instala as dependências JavaScript travadas em `package-lock.json` com `npm ci` e, quando Hugo estiver ausente no macOS, instala Hugo pelo Homebrew. Em outros sistemas, instale Hugo e deixe-o disponível no `PATH`. O deploy fixa Hugo `0.92.2` em `vercel.json`; a versão local pode diferir. Os testes end-to-end usam Playwright. Em Windows, `npm run hugo:server` chama o binário Hugo pelo WSL em `/snap/bin/hugo`.
 
 # Comandos
 
 | Comando | Finalidade |
 | --- | --- |
+| `make setup` | instala as dependências JavaScript do projeto com `npm ci` |
 | `make dev` | servidor Hugo local com hot reload |
 | `npm run validate:i18n` | compara as chaves em `i18n/pt.yaml` e `i18n/en.yaml` |
 | `npm run validate:content` | valida o frontmatter dos posts |
