@@ -1,4 +1,15 @@
-.PHONY: dev build check test deploy help
+.PHONY: setup dev build check test deploy help
+
+setup:
+	npm ci
+	@if ! command -v hugo >/dev/null 2>&1; then \
+		if command -v brew >/dev/null 2>&1; then \
+			brew install hugo; \
+		else \
+			echo "Hugo is missing. Install Hugo and ensure it is available on PATH." >&2; \
+			exit 1; \
+		fi; \
+	fi
 
 dev:
 	rm -f .hugo_build.lock
@@ -21,6 +32,7 @@ deploy: build
 
 help:
 	@echo "Available commands:"
+	@echo "  make setup    - Install project dependencies from package-lock.json"
 	@echo "  make dev      - Start Hugo dev server with hot reload"
 	@echo "  make build    - Build the site"
 	@echo "  make check    - Validate i18n, content, and the production build"
